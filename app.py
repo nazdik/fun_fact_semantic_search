@@ -4,7 +4,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Fun Facts",
-    page_icon="assets/favicon.png",
+    page_icon="assets/favicon.ico",
     initial_sidebar_state="expanded", 
 )
 
@@ -16,14 +16,8 @@ if 'facts' not in st.session_state:
     st.session_state.embeddings = Embeddings({"path": "sentence-transformers/nli-mpnet-base-v2"})
     st.session_state.embeddings.index(st.session_state.facts)
 
-# if 'fact_input' not in st.session_state:
-#     st.session_state['fact_input'] = ''
 
-
-
-
-
-st.title(":violet[Discover Fun Facts]")
+st.header(":violet[Fun Facts Explorer]")
 
 with st.form(key='query_form'):
   query = st.text_input(label='What are you curious about?')
@@ -37,9 +31,9 @@ if submit_button and query != '' and st.session_state.embeddings is not None:
 st.divider()
 
 def create_add_form():
-  with st.expander("What's Your Fun Fact?", expanded=False):
+  with st.expander("Unleash Your Fact!", expanded=False):
     with st.form(key='add_form', clear_on_submit=True):
-      fact = st.text_input(label='Enter a fun fact', key='fact_input', )
+      fact = st.text_input(label="What's Your Fun Fact?", key='fact_input', )
       submit_button = st.form_submit_button(label='Add Fact', )
 
     if submit_button and fact != '':

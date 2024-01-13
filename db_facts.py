@@ -69,6 +69,5 @@ def update_fact(id, fact):
 
  
 
-# add_fact({ "fact":"'Dreamt' is the only English word that ends with the letters 'mt'."})
 
 
