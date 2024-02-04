@@ -1,0 +1,5 @@
+pymongo==4.6.1
+python-dotenv==1.0.1
+streamlit==1.31.0
+txtai==6.3.0
+
